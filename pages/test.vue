@@ -3,7 +3,7 @@
 
     <div>
         <nuxt-link :to="switchLocalePath('en')">English</nuxt-link>
-        <nuxt-link :to="switchLocalePath('ar')">Français</nuxt-link>
+        <nuxt-link :to="switchLocalePath('ar')">Arabic</nuxt-link>
         <h2>Counter</h2>
         Counter: {{counter}}
   <p>{{ $t('welcome') }}</p>

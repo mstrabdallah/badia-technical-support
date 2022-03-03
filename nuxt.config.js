@@ -1,4 +1,4 @@
- export default {
+export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'test_vue',
@@ -13,12 +13,14 @@
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/antd/4.18.9/antd.min.css' }
     ]
     
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -39,30 +41,23 @@
   ],
 
   i18n: {
-    locales: ['en', 'ar'],
-    defaultLocale: 'en',
-    vueI18n: {
-      fallbackLocale: 'en',
-      messages: {
-        en: {
-          welcome: 'Welcome 000'
-        },
-        ar: {
-          welcome: 'مرحبا'
-        },
-        es: {
-          welcome: 'Bienvenido'
-        }
-      }
-    }
+    defaultLocale: 'ar',
+    locales:
+    [
+      { code: 'en', iso: 'en-US', file: 'en.json', dir: 'ltr' },
+      { code: 'ar', iso: 'ar-EG', file: 'ar.json', dir: 'rtl' },
+    ],
+    lazy: true,
+    langDir: 'lang/',
   },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: 'https://api.nuxtjs.dev',
+    baseURL: '',
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+
   }
 }

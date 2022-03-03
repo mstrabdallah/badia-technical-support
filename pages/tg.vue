@@ -49,6 +49,13 @@ export default {
       
     async handleSubmit({ $axios, $config }) {
         const mountains = await this.$axios.$post(`/mountains`,this.formInline)
+        .then(response => {
+        return response
+      })
+      .catch(error => {
+        return error
+        // return Promise.reject(error)
+      })
         return { mountains }
     },
   },
