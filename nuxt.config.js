@@ -13,7 +13,7 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/antd/4.18.9/antd.min.css' }
+
     ]
     
   },
@@ -59,5 +59,6 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
 
-  }
+  },
+  buildDir: 'build'
 }
