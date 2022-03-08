@@ -3,8 +3,10 @@ export default {
   head: {
     title: 'test_vue',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'ar',
     },
+     
+    
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -20,11 +22,14 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    
+   'ant-design-vue/dist/antd.css',
+   'vue-phone-number-input/dist/vue-phone-number-input.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['@/plugins/ant-design-vue'],
+  plugins: [
+    '@/plugins/ant-design-vue',
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -42,10 +47,11 @@ export default {
 
   i18n: {
     defaultLocale: 'ar',
+    seo:true,
     locales:
     [
-      { code: 'en', iso: 'en-US', file: 'en.json', dir: 'ltr' },
-      { code: 'ar', iso: 'ar-EG', file: 'ar.json', dir: 'rtl' },
+      { code: 'en', iso: 'en', file: 'en.json', dir: 'ltr' },
+      { code: 'ar', iso: 'ar', file: 'ar.json', dir: 'rtl' },
     ],
     lazy: true,
     langDir: 'lang/',
