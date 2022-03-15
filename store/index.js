@@ -2,7 +2,9 @@ import Vue from "vue";
 import Vuex from "vuex";
 
 import todos from "./modules/todos";
-import login from "./modules/login";
+import auth from "./modules/auth";
+import tickets from "./modules/tickets";
+import ticket from "./modules/ticket";
 
 // Load Vuex
 Vue.use(Vuex);
@@ -11,6 +13,8 @@ Vue.use(Vuex);
 export default () => new Vuex.Store({
   modules: {
     todos,
-    login
+    auth,
+    tickets,
+    ticket
   }
 });

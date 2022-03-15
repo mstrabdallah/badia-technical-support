@@ -1,12 +1,13 @@
+
+const env = require('dotenv').config()
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'test_vue',
+    title: 'Technical Support',
     htmlAttrs: {
       lang: 'ar',
     },
-     
-    
+
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -17,53 +18,92 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
 
     ]
-    
+
   },
 
+  env: env.parsed,
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-   'ant-design-vue/dist/antd.css',
-   'vue-phone-number-input/dist/vue-phone-number-input.css'
+
+    'vue-phone-number-input/dist/vue-phone-number-input.css',
+    '@fortawesome/fontawesome-svg-core/styles.css'
+
   ],
+
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '@/plugins/ant-design-vue',
+    '~/plugins/axios.js',
+    '~/plugins/vuetify.js',
   ],
+
+
+  router: {
+    middleware: ['auth'],
+  },
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
+
+
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
+
+
+
   buildModules: [
+  //   ['@nuxtjs/vuetify',{rtl:true}],
+    '@nuxtjs/vuetify',
+    '@nuxtjs/fontawesome'
+
   ],
 
+  fontawesome: {
+    component:'fa',
+    icons: {
+      solid: true,
+      brands:true
+     // regular: true
+    }
+  },
+
+  image: {
+    // Options
+  },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     '@nuxtjs/i18n',
+    'cookie-universal-nuxt',
+    '@nuxtjs/dotenv',
+    '@nuxt/image',
+
   ],
+
+
+ 
 
   i18n: {
     defaultLocale: 'ar',
-    seo:true,
+    seo: true,
     locales:
-    [
-      { code: 'en', iso: 'en', file: 'en.json', dir: 'ltr' },
-      { code: 'ar', iso: 'ar', file: 'ar.json', dir: 'rtl' },
-    ],
+      [
+        { code: 'en', iso: 'en', file: 'en.json', dir: 'ltr' },
+        { code: 'ar', iso: 'ar', file: 'ar.json', dir: 'rtl' },
+      ],
     lazy: true,
     langDir: 'lang/',
   },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {
-    // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: '',
-  },
+  // axios: {
+  //   // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
+  //   baseURL: 'https://support.tecbadia.com/api',
+  // },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+
     extractCSS: true,
     optimization: {
       splitChunks: {
